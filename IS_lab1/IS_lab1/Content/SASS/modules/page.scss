@@ -1,0 +1,55 @@
+﻿$sidebarWidth: 300px;
+$headerHeight: 60px;
+$sidebarTransition: right .3s ease-in-out;
+
+.parent, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+header { 
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: $headerHeight;
+	background-color: lightcoral;
+}
+
+
+.sidebar {
+	position: absolute;
+	top: $headerHeight;
+	right: -$sidebarWidth;
+	height: 100%;
+	width: $sidebarWidth;
+	transition: $sidebarTransition;
+	background-color: white;
+
+	&.open {
+		right: 0;
+	}
+
+	&-toggle {
+		position: absolute;
+		top: 50%;
+		left: -60px;
+		height: 60px;
+		width: 60px;
+		z-index: 1;
+	}
+}
+
+.content {
+	position: absolute;
+	top: $headerHeight;
+	left: 0;
+	right: 0;
+	height: 100%;
+	transition: $sidebarTransition;
+	background-color: lightgray;
+
+	&.open {
+		right: $sidebarWidth;
+	}
+}

@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "Scripts/React/app.js",
+    "inputFile": "Scripts/React/app.jsx"
+  },
+  {
+    "outputFile": "Content/SASS/modules/page.css",
+    "inputFile": "Content/SASS/modules/page.scss"
+  }
+]

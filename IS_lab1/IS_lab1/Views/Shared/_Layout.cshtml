@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Продажа Жёстких дисков</title>
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/SASS/modules/page.css" rel="stylesheet"/>
+    <link href="~/Content/antd.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container body-content" id="body">
+        @RenderBody()
+    </div>
+
+    <script src="~/Scripts/React/react.development.js"></script>
+    <script src="~/Scripts/React/react-dom.development.js"></script>
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Scripts/antd.js"></script>
+    <script src="~/Scripts/React/app.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
