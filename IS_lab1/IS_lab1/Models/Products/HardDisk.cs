@@ -6,6 +6,8 @@ namespace IS_lab1.Models.Products
 {
 	public class HardDisk : Product
 	{
+		public string Image { get; set; }
+
 		public double? AccessTime { get; set; }
 		public bool? Autonomous { get; set; }
 		public double? AutonomousTime { get; set; }

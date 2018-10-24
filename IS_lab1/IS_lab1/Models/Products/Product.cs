@@ -12,7 +12,10 @@ namespace IS_lab1.Models.Products
 		[ForeignKey("ColorId")]
 		public Color Color;
 		public double? Cost;
+		public int ManufacturerId { get; set; }
+		[ForeignKey("ManufacturerId")]
 		public Company Manufacturer { get; set; }
+
 		[Required]
 		public string Name;
 	}

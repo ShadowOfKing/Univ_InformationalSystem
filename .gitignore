@@ -2,4 +2,7 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/IS_lab1/.vs/IS_lab1/v15/Server/sqlite3
+/IS_lab1/.vs
+/IS_lab1/.vs/*
+/IS_lab1_v2/.vs
+/IS_lab1_v2/.vs/*

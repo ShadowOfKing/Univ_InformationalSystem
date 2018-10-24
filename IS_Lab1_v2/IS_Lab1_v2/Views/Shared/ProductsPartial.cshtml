@@ -1,0 +1,72 @@
+﻿@using IS_lab1_v2.Models
+@using System.Collections
+@model List<HardDisk>
+
+@{
+    var sata = new Dictionary<HardDisk.SataFormat?, string>
+    {
+        { null, "Нет данных" },
+        { HardDisk.SataFormat.S15, "1.5Gb/s" },
+        { HardDisk.SataFormat.S30, "3Gb/s " },
+        { HardDisk.SataFormat.S60, "6Gb/s " }
+    };
+    var bl = new Dictionary<bool?, string>
+    {
+        { null, "Нет данных" },
+        { true, "Есть" },
+        { false, "Нет" },
+    };
+    var form = new Dictionary<HardDisk.DiskFormFactor?, string>
+    {
+        {null, "Нет данных" },
+        {HardDisk.DiskFormFactor.I18, "1.8" },
+        {HardDisk.DiskFormFactor.I25, "2.5" },
+        {HardDisk.DiskFormFactor.I35, "3.5" },
+        {HardDisk.DiskFormFactor.M2242, "2242" },
+        {HardDisk.DiskFormFactor.M2260, "2262" },
+        {HardDisk.DiskFormFactor.M2280, "2280" }
+    };
+    var purpose = new Dictionary<HardDisk.DiskPurpose?, string>
+    {
+        {null, "Нет данных" },
+        { HardDisk.DiskPurpose.CompNote, "Ноутбук и настольный компьютер" },
+        { HardDisk.DiskPurpose.Computer, "Настольный компьютер" },
+        { HardDisk.DiskPurpose.Notebook, "Ноутбук" },
+        { HardDisk.DiskPurpose.Outer, "Внешний" },
+        { HardDisk.DiskPurpose.Server, "Сервер" }
+    };
+    }
+
+<script>
+    var items = [];
+    @foreach (var hd in Model)
+    {
+        <text>
+    items.push({
+                Name: "@hd.Name",
+                AccessTime: "@hd.AccessTime",
+                Autonomous: "@bl[hd.Autonomous]",
+                AutonomousTime: "@hd.AutonomousTime",
+                BufferSize: "@hd.BufferSize",
+                Color: "@hd.Color",
+                Cost: "@hd.Cost",
+                FlashSize: "@hd.FlashSize",
+                FormFactor: "@hd.FormFactor",
+                HasSCSI: "@bl[hd.HasSCSI]",
+                Image: "@hd.Image",
+                IsM2: "@bl[hd.IsM2]",
+                Manufacturer: "@hd.Manufacturer",
+                Purpose: "@hd.Purpose",
+                ReadSpeed: "@hd.ReadSpeed",
+                RotationSpeed: "@hd.RotationSpeed",
+                Sata: "@hd.Sata",
+                Size: "@hd.Size",
+                Type: "@hd.Type",
+                Usb: "@hd.Usb",
+                WorkTime: "@hd.WorkTime",
+                WriteSpeed: "@hd.WriteSpeed",
+            })
+        </text>
+    }
+    generateItems(items);
+</script>

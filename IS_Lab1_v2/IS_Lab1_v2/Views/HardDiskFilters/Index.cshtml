@@ -1,0 +1,185 @@
+﻿@model IEnumerable<IS_lab1_v2.Models.HardDiskFilter>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CostMin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CostMax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccessTimeMin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccessTimeMax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Autonomous)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AutonomousTimeMin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AutonomousTimeMax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BufferSizeMin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BufferSizeMax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlashSizeMin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlashSizeMax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HasSCSI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsM2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReadSpeedMin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReadSpeedMax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RotationSpeedMin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RotationSpeedMax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SizeMin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SizeMax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkTimeMin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkTimeMax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WriteSpeedMin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WriteSpeedMax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Page)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PageSize)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostMin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostMax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccessTimeMin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccessTimeMax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Autonomous)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AutonomousTimeMin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AutonomousTimeMax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BufferSizeMin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BufferSizeMax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlashSizeMin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlashSizeMax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasSCSI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsM2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReadSpeedMin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReadSpeedMax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RotationSpeedMin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RotationSpeedMax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SizeMin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SizeMax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkTimeMin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkTimeMax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WriteSpeedMin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WriteSpeedMax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Page)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PageSize)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

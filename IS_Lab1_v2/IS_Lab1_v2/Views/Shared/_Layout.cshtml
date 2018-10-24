@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Продажа Жёстких дисков</title>
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/SASS/modules/page.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container body-content" id="body">
+        <div style="display: none;">
+            <div class="product-item product-item__template">
+                <div class="product-item__image"></div>
+                <div class="product-item__body">
+                    <div class="product-item__header clearfix">
+                        <div class="product-item__header-name">name</div>
+                        <div class="product-item__header-cost">48574 Руб</div>
+                    </div>
+                    <div class="product-item__content">
+                        <div class="product-item__body-item"><b>Производитель: </b><span class="product-item__body-item_manufacturer"></span></div>
+                        <div class="product-item__body-item "><b>Тип: </b><span class="product-item__body-item_type"></span></div>
+                        <div class="product-item__body-item "><b>Ёмкость: </b><span class="product-item__body-item_size"></span></div>
+                        <div class="product-item__body-item"><b>Интерфейс SATA: </b><span class=" product-item__body-item_sata"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="product-item__container" style="width: 100%;"></div>
+            @RenderBody()
+        </div>
+        <div class="sidebar-toggle">
+            <div class="sidebar-toggle__text">OPEN</div>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-header" style="display: inline-block; position: relative; font-size: 2rem; font-weight: bold; line-height: 3rem; text-align: center; width: 100%;">
+                Фильтр
+            </div>
+            @RenderSection("Sidebar")
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><div name="Name"></div></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label class="col-form-label" name="Manufacturer">Производитель</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-control disabled" name="Manufacturer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label class="col-form-label" name="Cost">Цена</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-control disabled" name="Cost"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label class="col-form-label" name="AccessTime">Среднее время доступа</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-control disabled" name="AccessTime"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label class="col-form-label" name="Autonomous">Автономность</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-control disabled" name="Autonomous"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label class="col-form-label" name="AutonomousTime">Время работы в автономном режиме</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-control disabled" name="AutonomousTime"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label class="col-form-label" name="BufferSize">Объём буфера</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-control disabled" name="BufferSize"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label class="col-form-label" name="FlashSize">Объём флэн-памяти</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-control disabled" name="FlashSize"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label class="col-form-label" name="FormFactor">Форм-фактор</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-control disabled" name="FormFactor"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label class="col-form-label" name="HasSCSI">Интерфейс SCSI</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-control disabled" name="HasSCSI"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label class="col-form-label" name="IsM2">Интерфейс M2</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-control disabled" name="IsM2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label class="col-form-label" name="Purpose">Назначение</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-control disabled" name="Purpose"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label class="col-form-label" name="ReadSpeed">Скорость чтения</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-control disabled" name="ReadSpeed"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label class="col-form-label" name="RotationSpeed">Скорость вращения</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-control disabled" name="RotationSpeed"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label class="col-form-label" name="Sata">Интерфейс SATA</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-control disabled" name="Sata"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label class="col-form-label" name="Size">Ёмкость</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-control disabled" name="Size"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label class="col-form-label" name="Type">Тип</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-control disabled" name="Type"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label class="col-form-label" name="Usb">Интерфейс USB</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-control disabled" name="Usb"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label class="col-form-label" name="WorkTime">Время наработки на отказ</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-control disabled" name="WorkTime"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label class="col-form-label" name="WriteSpeed">Скорость записи</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-control disabled" name="WriteSpeed"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script>
+        var root = "@Url.Content("~/")";
+        root = root[root.length - 1] == "/" ? root : root + "/";
+        var generateItem = function (item) {
+            var $p = $('.product-item__template').clone();
+            $p.removeClass('product-item__template');
+            $p.find('.product-item__image').css('background-image', 'url(' + root + "images/" + item.Image + ".png");
+            $p.find('.product-item__header-name').text(item.Name);
+            $p.find('.product-item__header-cost').text(item.Cost + " Руб");
+            $p.find('.product-item__body-item_manufacturer').text(item.Manufacturer);
+            $p.find('.product-item__body-item_type').text(item.Type);
+            $p.find('.product-item__body-item_size').text(item.Size + " Гб");
+            $p.find('.product-item__body-item_sata').text(item.Sata);
+            $('.product-item__container').append($p);
+
+            $p.click(function () {
+                var $m = $('#exampleModal').clone();
+                $m.find('div[name]').each(function () {
+                    $(this).text(item[$(this).attr('name')]);
+                })
+                $m.find('[data-dismiss]').click(function () {
+                    setTimeout(function () {
+                        $m.remove();
+                    }, 100);
+                })
+                $m.modal('show');
+            })
+        }
+
+        var generateItems = function (items, empty) {
+            if (empty !== false) {
+                $('.product-item__container').empty();
+            }
+            for (var i = 0; i < items.length; i++) {
+                generateItem(items[i]);
+            }
+        }
+
+        $('.sidebar-toggle').click(function () {
+            $('#body').toggleClass('sidebar-opened');
+            $('.sidebar-toggle__text').text($('#body').hasClass('sidebar-opened') ? "CLOSE" : "OPEN");
+        })
+    </script>
+    @RenderSection("scripts")
+</body>
+</html>

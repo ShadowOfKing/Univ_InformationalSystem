@@ -5,21 +5,267 @@
     <meta name="viewport" content="width=device-width" />
     <title>Продажа Жёстких дисков</title>
     @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/bootstrap.css" rel="stylesheet"/>
     <link href="~/Content/SASS/modules/page.css" rel="stylesheet"/>
-    <link href="~/Content/antd.css" rel="stylesheet"/>
-    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Content/css/bootstrap-theme.min.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container body-content" id="body">
-        @RenderBody()
+        <div style="display: none;">
+            <div class="product-item product-item__template">
+                <div class="product-item__image"></div>
+                <div class="product-item__body">
+                    <div class="product-item__header clearfix">
+                        <div class="product-item__header-name">name</div>
+                        <div class="product-item__header-cost">48574 Руб</div>
+                    </div>
+                    <div class="product-item__content">
+                        <div class="product-item__body-item product-item__body-item_manufacturer">dfg sdfg sdfg sdf</div>
+                        <div class="product-item__body-item product-item__body-item_type">dfg df897 ssdf g</div>
+                        <div class="product-item__body-item product-item__body-item_size">ло8 авгта ы</div>
+                        <div class="product-item__body-item product-item__body-item_sata">dfg  dfg ds 7894110</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="product-item__container" style="width: 100%;"></div>
+            @RenderBody()
+        </div>
+        <div class="sidebar-toggle">
+            <div class="sidebar-toggle__text">OPEN</div>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-header" style="display: inline-block; position: relative; font-size: 2rem; font-weight: bold; line-height: 3rem; text-align: center; width: 100%;">
+                Фильтр
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label class="col-form-label" name=""></label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-control disabled" name=""></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label class="col-form-label" name=""></label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-control disabled" name=""></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label class="col-form-label" name=""></label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-control disabled" name=""></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label class="col-form-label" name=""></label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-control disabled" name=""></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label class="col-form-label" name=""></label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-control disabled" name=""></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label class="col-form-label" name=""></label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-control disabled" name=""></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label class="col-form-label" name=""></label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-control disabled" name=""></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label class="col-form-label" name=""></label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-control disabled" name=""></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label class="col-form-label" name=""></label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-control disabled" name=""></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label class="col-form-label" name=""></label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-control disabled" name=""></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label class="col-form-label" name=""></label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-control disabled" name=""></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label class="col-form-label" name=""></label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-control disabled" name=""></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label class="col-form-label" name=""></label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-control disabled" name=""></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label class="col-form-label" name=""></label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-control disabled" name=""></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label class="col-form-label" name=""></label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-control disabled" name=""></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script src="~/Scripts/React/react.development.js"></script>
-    <script src="~/Scripts/React/react-dom.development.js"></script>
-    <script src="~/Scripts/moment.js"></script>
-    @*<script src="~/Scripts/antd.js"></script>
-    <script src="~/Scripts/React/app.jsx"></script>*@
-    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/popper.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script>
+        var generateItem = function (item) {
+            var $p = $('.product-item__template').clone();
+            $p.removeClass('product-item__template');
+            $p.find('.product-item__image').css('background-image', item.Image);
+            $p.find('.product-item__header-name').text(item.Name);
+            $p.find('.product-item__header-cost').text(item.Cost + " Руб");
+            $p.find('.product-item__body-item_manufacturer').text(item.Manufacturer);
+            $p.find('.product-item__body-item_type').text(item.Type);
+            $p.find('.product-item__body-item_size').text(item.Usb);
+            $p.find('.product-item__body-item_sata').text(item.Sata);
+            $('.product-item__container').append($p);
+        }
+
+        var generateItems = function (items, empty) {
+            if (empty !== false) {
+                $('.product-item__container').empty();
+            }
+            for (var i = 0; i < items.length; i++) {
+                generateItem(items[i]);
+            }
+        }
+
+        $('.sidebar-toggle').click(function () {
+            $('#body').toggleClass('sidebar-opened');
+            $('.sidebar-toggle__text').text($('#body').hasClass('sidebar-opened') ? "CLOSE" : "OPEN");
+        })
+
+        var items = [
+            {
+                Name: "One",
+                Cost: 1564,
+                Manufacturer: "Man",
+                Type: "Ty",
+                Usb: "Uasd",
+                Sata: "S12"
+            },
+            {
+                Name: "sdf",
+                Cost: 545,
+                Manufacturer: "Adf",
+                Type: "Tsdf",
+                Usb: "U13",
+                Sata: "S52"
+            },
+            {
+                Name: "Nsdf",
+                Cost: 7889,
+                Manufacturer: "MMM",
+                Type: "Tsd3",
+                Usb: "U234",
+                Sata: "S14"
+            }
+        ]
+        generateItems(items, false);
+        generateItems(items, false);
+        generateItems(items, false);
+    </script>
 </body>
 </html>

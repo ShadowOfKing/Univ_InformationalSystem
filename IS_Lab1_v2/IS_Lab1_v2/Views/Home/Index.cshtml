@@ -1,0 +1,16 @@
+﻿@using IS_lab1_v2.Models
+@model List<object>
+
+@{
+    ViewBag.Title = "Home Page";
+    var disks = (List<HardDisk>)Model[0];
+    var filter = (HardDiskFilter)Model[1];
+}
+
+@section Sidebar {
+    @{ Html.RenderPartial("FilterPartial", filter);}
+}
+
+@section Scripts {
+    @{ Html.RenderPartial("ProductsPartial", disks);}    
+}
