@@ -1,5 +1,4 @@
-﻿import DatePicker from '../antd';
-
+﻿
 class Parent extends React.Component {
     constructor(props) {
         super(props);
@@ -50,7 +49,6 @@ class Content extends React.Component {
         return (
             <div className={contentClass}>
                 <div>I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!I am content fill me up!</div>
-                <DatePicker />
             </div>
         );
     }

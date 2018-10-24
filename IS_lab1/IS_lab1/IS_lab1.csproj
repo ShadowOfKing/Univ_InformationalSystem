@@ -357,6 +357,8 @@
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\antd.css" />
+    <Content Include="Content\css\bootstrap-theme.min.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\SASS\modules\page.css">
       <DependentUpon>page.scss</DependentUpon>
     </Content>
@@ -395,7 +397,6 @@
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <None Include="Content\SASS\modules\page.scss" />
-    <Content Include="Scripts\antd-with-locales.js" />
     <Content Include="Scripts\antd.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\moment-with-locales.js" />

@@ -7,6 +7,8 @@
     @Scripts.Render("~/bundles/modernizr")
     <link href="~/Content/SASS/modules/page.css" rel="stylesheet"/>
     <link href="~/Content/antd.css" rel="stylesheet"/>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-theme.min.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container body-content" id="body">
@@ -16,8 +18,8 @@
     <script src="~/Scripts/React/react.development.js"></script>
     <script src="~/Scripts/React/react-dom.development.js"></script>
     <script src="~/Scripts/moment.js"></script>
-    <script src="~/Scripts/antd.js"></script>
-    <script src="~/Scripts/React/app.js"></script>
+    @*<script src="~/Scripts/antd.js"></script>
+    <script src="~/Scripts/React/app.jsx"></script>*@
     @RenderSection("scripts", required: false)
 </body>
 </html>
