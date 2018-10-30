@@ -1,0 +1,136 @@
+﻿@using IS_Lab1_v2.Models.Helper;
+@using System.Dynamic
+@using System.Linq.Expressions
+@using System.Text;
+@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@using IS_Lab1_v2.Models
+@using IS_Lab1_v2.AppCode
+@using System.Web.Routing;
+
+@helper Bootstrap_TextEdit(MvcHtmlString box, MvcHtmlString label, MvcHtmlString validate, object hint = null, string groupClassName = "")
+    {
+        var dHint = (IDictionary<string, object>)hint;
+        <div class="form-group row @groupClassName">
+            @label
+            <div class="col-sm-4">
+                @box
+                @if (hint != null)
+                {
+                    <small class="form-text @dHint["class"]">@dHint["text"]</small>
+                }
+            </div>
+            @validate
+        </div>
+}
+
+@helper Bootstrap_RadioEdit(string text, MvcHtmlString r1, MvcHtmlString r2, dynamic attributes = null, bool active = true)
+    {
+        
+        <div class="form-group row">
+            <label class=" col-sm-4 col-form-label">@text</label>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary @(!active ? "active" : "")">
+                    @r1
+                </label>
+                <label class="btn btn-secondary @(!active ? "" : "active")">
+                    @r2
+                </label>
+            </div>
+        </div>
+}
+
+@functions {
+    //bootstrap-version
+    public static HelperResult Bootstrap_TextEdit<Tmodel, TItem>(HtmlHelper<Tmodel> html, Expression<Func<Tmodel, TItem>> expr, dynamic attributes = null)
+    {
+        DynamicHelper.SetDynamicObject(ref attributes);
+        DynamicHelper.ChangeDynamicParam(attributes, "class", "");
+        DynamicHelper.ChangeDynamicParam(attributes, "box", new ExpandoObject());
+        DynamicHelper.ChangeDynamicParam(attributes, "label", new ExpandoObject());
+        DynamicHelper.ChangeDynamicParam(attributes, "valid", new ExpandoObject());
+        DynamicHelper.ChangeDynamicParam(attributes, "hint", new ExpandoObject());
+        DynamicHelper.ChangeDynamicParam(attributes.box, "class", " form-control");
+        DynamicHelper.ChangeDynamicParam(attributes.label, "class", " col-sm-4 col-form-label");
+
+        var hint = attributes.hint;
+        DynamicHelper.ChangeDynamicParam(hint, "text", "", true);
+        DynamicHelper.ChangeDynamicParam(hint, "class", "", true);
+        DynamicHelper.ChangeDynamicParam(hint, "type", "", true);
+        switch (hint.type)
+        {
+            case "error":
+                DynamicHelper.ChangeDynamicParam(hint, "class", " invalid-feedback");
+                break;
+            case "valid":
+                DynamicHelper.ChangeDynamicParam(hint, "class", " valid-feedback");
+                break;
+            default:
+                DynamicHelper.ChangeDynamicParam(hint, "class", " text-muted");
+                break;
+        }
+        var box = EditHelperAdd.TextBoxFor(html, expr, attributes.box);
+        var label = EditHelperAdd.LabelFor(html, expr, attributes.label);
+        var valid = html.ValidationMessageFor(expr, null, (object)(attributes.valid));
+        var classname = ((IDictionary<string, object>)attributes)["class"].ToString();
+        return Bootstrap_TextEdit(box, label, valid, hint, classname);
+    }
+    public static HelperResult Bootstrap_SwitchEdit<Tmodel, TItem>(HtmlHelper<Tmodel> html, Expression<Func<Tmodel, TItem>> expr, dynamic attributes = null, bool active = true)
+    {
+        DynamicHelper.SetDynamicObject(ref attributes);
+
+        var meta = ModelMetadata.FromLambdaExpression(expr, html.ViewData);
+
+        string name;
+        string label;
+        if (((IDictionary<string, object>)attributes).ContainsKey("name")) {
+            name = attributes.name;
+        }
+        else
+        {
+            name = ExpressionHelper.GetExpressionText(expr);
+        }
+
+        if (((IDictionary<string, object>)attributes).ContainsKey("label")) {
+            label = attributes.label;
+        }
+        else
+        {
+            label = meta.DisplayName ?? meta.PropertyName ?? name.Split('.').Last();
+        }
+
+        DynamicHelper.ChangeDynamicParam(attributes, "class", "");
+        DynamicHelper.ChangeDynamicParam(attributes, "box", new ExpandoObject());
+        DynamicHelper.ChangeDynamicParam(attributes, "label", new ExpandoObject());
+
+        DynamicHelper.ChangeDynamicParam(attributes.box, "check", new ExpandoObject());
+        DynamicHelper.ChangeDynamicParam(attributes.box, "uncheck", new ExpandoObject());
+
+        DynamicHelper.ChangeDynamicParam(attributes.box.check, "value", "true", true, typeof(bool));
+        DynamicHelper.ChangeDynamicParam(attributes.box.uncheck, "value", "false", true, typeof(bool));
+        DynamicHelper.ChangeDynamicParam(attributes.box.check, "text", "Да", true);
+        DynamicHelper.ChangeDynamicParam(attributes.box.uncheck, "text", "Нет", true);
+
+        DynamicHelper.ChangeDynamicParam(attributes.label, "text", label, true);
+        var ra1 = EditHelperAdd.RadioButtonFor(html, expr, attributes.box.check, active);
+        var ra2 = EditHelperAdd.RadioButtonFor(html, expr, attributes.box.uncheck, !active);
+        return Bootstrap_RadioEdit(attributes.label.text, ra2, ra1, null, active);
+    }
+    public static HelperResult Bootstrap_ColorEdit<Tmodel, TItem>(HtmlHelper<Tmodel> html, Expression<Func<Tmodel, TItem>> expr, dynamic attributes = null)
+    {
+        DynamicHelper.SetDynamicObject(ref attributes);
+        DynamicHelper.ChangeDynamicParam(attributes, "box", new ExpandoObject());
+        DynamicHelper.ChangeDynamicParam(attributes.box, "class", " color-field");
+        return Bootstrap_TextEdit(html, expr, attributes);
+    }
+    public static HelperResult Bootstrap_DropdownForEnum<Tmodel, TItem>(HtmlHelper<Tmodel> html, Expression<Func<Tmodel, TItem>> expr, dynamic attributes = null)
+    {
+        DynamicHelper.SetDynamicObject(ref attributes);
+        DynamicHelper.ChangeDynamicParam(attributes, "class", "");
+        var d = (IDictionary<string, object>)attributes;
+        var ddwn = html.EnumDropDownListFor(expr, new { @class = "form-control " + d["class"]});
+        var label = html.LabelFor(expr, new { @class= " col-sm-4 col-form-label" });
+        var valid = html.ValidationMessageFor(expr);
+        return Bootstrap_TextEdit(ddwn, label, valid);
+    }
+}

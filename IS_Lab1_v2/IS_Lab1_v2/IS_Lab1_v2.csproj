@@ -150,6 +150,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App_Code\EditHelper.cshtml" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -169,8 +170,14 @@
     <Compile Include="Migrations\201810240810420_init3.Designer.cs">
       <DependentUpon>201810240810420_init3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810241101253_a.cs" />
+    <Compile Include="Migrations\201810241101253_a.Designer.cs">
+      <DependentUpon>201810241101253_a.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DefaultContext.cs" />
+    <Compile Include="Models\DynamicHelper.cs" />
+    <Compile Include="Models\EnumHelper.cs" />
     <Compile Include="Models\HardDiskFilter.cs" />
     <Compile Include="Models\HardDisk.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -216,6 +223,7 @@
     <Content Include="Images\8.webp" />
     <Content Include="Images\9.webp" />
     <Content Include="Content\SASS\modules\page.scss" />
+    <Compile Include="App_Code\EditHelperAdd.cs" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -276,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810240810420_init3.resx">
       <DependentUpon>201810240810420_init3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810241101253_a.resx">
+      <DependentUpon>201810241101253_a.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

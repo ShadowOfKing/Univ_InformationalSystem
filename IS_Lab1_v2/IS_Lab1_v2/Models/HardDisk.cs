@@ -8,7 +8,7 @@ namespace IS_lab1_v2.Models
 	{
 		[Key]
 		public int Id { get; set; }
-		public string Color { get; set; }
+		public HColor? Color { get; set; }
 		public double? Cost { get; set; }
 		public string Manufacturer { get; set; }
 
@@ -37,6 +37,16 @@ namespace IS_lab1_v2.Models
 		public UsbType? Usb { get; set; }
 		public double? WorkTime { get; set; }
 		public double? WriteSpeed { get; set; }
+
+		public enum HColor
+		{
+			Black,
+			Gray,
+			White,
+			Green,
+			Blue,
+			Orange
+		}
 
 		public enum DiskType
 		{

@@ -3,22 +3,19 @@
 @model List<HardDisk>
 
 @{
-    var sata = new Dictionary<HardDisk.SataFormat?, string>
+    var sata = new Dictionary<HardDisk.SataFormat, string>
     {
-        { null, "Нет данных" },
         { HardDisk.SataFormat.S15, "1.5Gb/s" },
         { HardDisk.SataFormat.S30, "3Gb/s " },
         { HardDisk.SataFormat.S60, "6Gb/s " }
     };
-    var bl = new Dictionary<bool?, string>
+    var bl = new Dictionary<bool, string>
     {
-        { null, "Нет данных" },
         { true, "Есть" },
         { false, "Нет" },
     };
-    var form = new Dictionary<HardDisk.DiskFormFactor?, string>
+    var form = new Dictionary<HardDisk.DiskFormFactor, string>
     {
-        {null, "Нет данных" },
         {HardDisk.DiskFormFactor.I18, "1.8" },
         {HardDisk.DiskFormFactor.I25, "2.5" },
         {HardDisk.DiskFormFactor.I35, "3.5" },
@@ -26,15 +23,80 @@
         {HardDisk.DiskFormFactor.M2260, "2262" },
         {HardDisk.DiskFormFactor.M2280, "2280" }
     };
-    var purpose = new Dictionary<HardDisk.DiskPurpose?, string>
+    var purpose = new Dictionary<HardDisk.DiskPurpose, string>
     {
-        {null, "Нет данных" },
         { HardDisk.DiskPurpose.CompNote, "Ноутбук и настольный компьютер" },
         { HardDisk.DiskPurpose.Computer, "Настольный компьютер" },
         { HardDisk.DiskPurpose.Notebook, "Ноутбук" },
         { HardDisk.DiskPurpose.Outer, "Внешний" },
         { HardDisk.DiskPurpose.Server, "Сервер" }
     };
+
+    string Purpose(HardDisk.DiskPurpose? p)
+    {
+        if (p.HasValue) return purpose[p.Value];
+        else return "Нет данных";
+    }
+    string Sata(HardDisk.SataFormat? format)
+    {
+        if (format.HasValue) return sata[format.Value];
+        else return "Нет данных";
+    }
+    string Bl (bool? b)
+    {
+        if (b.HasValue) return bl[b.Value];
+        else return "Нет данных";
+    }
+    string Form(HardDisk.DiskFormFactor? f)
+    {
+        if (f.HasValue) return form[f.Value];
+        else return "Нет данных";
+    }
+    var usb = new Dictionary<HardDisk.UsbType, string>
+    {
+        {HardDisk.UsbType.U20, "2.0" },
+        {HardDisk.UsbType.U30, "3.0" },
+        {HardDisk.UsbType.U31, "3.1" },
+        {HardDisk.UsbType.U31TC, "3.1 TC" }
+    };
+    string Usb(HardDisk.UsbType? u)
+    {
+        if (u.HasValue) return usb[u.Value];
+        return "Нет данных";
+    }
+    var t = new Dictionary<HardDisk.DiskType, string>
+    {
+        { HardDisk.DiskType.HDD, "HDD" },
+        { HardDisk.DiskType.Hybrid, "Гибридный" },
+        { HardDisk.DiskType.SSD, "SSD" }
+    };
+    string T (HardDisk.DiskType? ty)
+    {
+        if (ty.HasValue) return t[ty.Value];
+        else return "Нет данных";
+    }
+    string S(string s)
+    {
+        return string.IsNullOrWhiteSpace(s) ? "Нет данных" : s;
+    }
+    string D(double? d)
+    {
+        return d.HasValue ? d.Value.ToString() : "Нет данных";
+    }
+    var c = new Dictionary<HardDisk.HColor, string>
+    {
+        { HardDisk.HColor.Black, "Чёрный" },
+        { HardDisk.HColor.Blue, "Синий" },
+        { HardDisk.HColor.Gray, "Серый" },
+        { HardDisk.HColor.Green, "Зелёный" },
+        { HardDisk.HColor.Orange, "Оранжевый" },
+        { HardDisk.HColor.White, "Белый" },
+    };
+    string C(HardDisk.HColor? col)
+    {
+        if (col.HasValue) return c[col.Value];
+        return "Нет данных";
+    }
     }
 
 <script>
@@ -43,28 +105,28 @@
     {
         <text>
     items.push({
-                Name: "@hd.Name",
-                AccessTime: "@hd.AccessTime",
-                Autonomous: "@bl[hd.Autonomous]",
-                AutonomousTime: "@hd.AutonomousTime",
-                BufferSize: "@hd.BufferSize",
-                Color: "@hd.Color",
-                Cost: "@hd.Cost",
-                FlashSize: "@hd.FlashSize",
-                FormFactor: "@hd.FormFactor",
-                HasSCSI: "@bl[hd.HasSCSI]",
-                Image: "@hd.Image",
-                IsM2: "@bl[hd.IsM2]",
-                Manufacturer: "@hd.Manufacturer",
-                Purpose: "@hd.Purpose",
-                ReadSpeed: "@hd.ReadSpeed",
-                RotationSpeed: "@hd.RotationSpeed",
-                Sata: "@hd.Sata",
-                Size: "@hd.Size",
-                Type: "@hd.Type",
-                Usb: "@hd.Usb",
-                WorkTime: "@hd.WorkTime",
-                WriteSpeed: "@hd.WriteSpeed",
+                Name: "@S(hd.Name)",
+                AccessTime: "@D(hd.AccessTime)",
+                Autonomous: "@Bl(hd.Autonomous)",
+                AutonomousTime: "@D(hd.AutonomousTime)",
+                BufferSize: "@D(hd.BufferSize)",
+                Color: "@C(hd.Color)",
+                Cost: "@D(hd.Cost)",
+                FlashSize: "@D(hd.FlashSize)",
+                FormFactor: "@Form(hd.FormFactor)",
+                HasSCSI: "@Bl(hd.HasSCSI)",
+                Image: "@S(hd.Image)",
+                IsM2: "@Bl(hd.IsM2)",
+                Manufacturer: "@S(hd.Manufacturer)",
+                Purpose: "@Purpose(hd.Purpose)",
+                ReadSpeed: "@D(hd.ReadSpeed)",
+                RotationSpeed: "@D(hd.RotationSpeed)",
+                Sata: "@Sata(hd.Sata)",
+                Size: "@D(hd.Size)",
+                Type: "@T(hd.Type)",
+                Usb: "@Usb(hd.Usb)",
+                WorkTime: "@D(hd.WorkTime)",
+                WriteSpeed: "@D(hd.WriteSpeed)",
             })
         </text>
     }

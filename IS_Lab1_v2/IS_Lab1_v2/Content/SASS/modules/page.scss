@@ -1,4 +1,4 @@
-﻿$sidebarWidth: 400px;
+﻿$sidebarWidth: 500px;
 $standartTransition: all .3s ease-in-out;
 
 #body {
@@ -44,7 +44,7 @@ $standartTransition: all .3s ease-in-out;
         cursor: pointer;
 
         .sidebar-opened & {
-            right: calc(#{$sidebarWidth} - 20px);
+            right: calc(#{$sidebarWidth} - 15px);
         }
 
         &__text {
@@ -68,8 +68,26 @@ $standartTransition: all .3s ease-in-out;
         width: calc(100% - #{$sidebarWidth});
     }
 }
+.form-control.disabled {
+    height: 2.7rem!important;
+}
+
+.form-group.row * {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    height: 1.5rem;
+}
 
 .product {
+    &-block {
+        font-size: 1.3rem;
+        &__container {
+            width: 20%;
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+
     &-item {
         width: calc(100% - 40px);
         display: inline-block;

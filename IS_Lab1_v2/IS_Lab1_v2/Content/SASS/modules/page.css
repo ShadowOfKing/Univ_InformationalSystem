@@ -12,9 +12,9 @@
 .sidebar {
   position: fixed;
   top: 0;
-  right: -400px;
+  right: -500px;
   height: 100%;
-  width: 400px;
+  width: 500px;
   transition: all 0.3s ease-in-out;
   background-color: white;
   overflow-y: auto;
@@ -36,7 +36,7 @@
     background: #e8e8e8;
     cursor: pointer; }
     .sidebar-opened .sidebar-toggle {
-      right: calc(400px - 20px); }
+      right: calc(500px - 15px); }
     .sidebar-toggle__text {
       transform: rotate(45deg) translate(27px, 35px);
       text-align: center;
@@ -51,7 +51,22 @@
   transition: all 0.3s ease-in-out;
   width: 100%; }
   .sidebar-opened .content {
-    width: calc(100% - 400px); }
+    width: calc(100% - 500px); }
+
+.form-control.disabled {
+  height: 2.7rem !important; }
+
+.form-group.row * {
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  height: 1.5rem; }
+
+.product-block {
+  font-size: 1.3rem; }
+  .product-block__container {
+    width: 20%;
+    display: inline-block;
+    vertical-align: top; }
 
 .product-item {
   width: calc(100% - 40px);

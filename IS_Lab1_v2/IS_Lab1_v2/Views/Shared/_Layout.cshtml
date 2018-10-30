@@ -19,10 +19,32 @@
                         <div class="product-item__header-cost">48574 Руб</div>
                     </div>
                     <div class="product-item__content">
-                        <div class="product-item__body-item"><b>Производитель: </b><span class="product-item__body-item_manufacturer"></span></div>
-                        <div class="product-item__body-item "><b>Тип: </b><span class="product-item__body-item_type"></span></div>
-                        <div class="product-item__body-item "><b>Ёмкость: </b><span class="product-item__body-item_size"></span></div>
-                        <div class="product-item__body-item"><b>Интерфейс SATA: </b><span class=" product-item__body-item_sata"></span></div>
+                        <div class="product-block__container">
+                            <div class="product-block"><b>Производитель: </b><span class="product-item__body-item_Manufacturer"></span></div>
+                            <div class="product-block"><b>Тип: </b><span class="product-item__body-item_Type"></span></div>
+                            <div class="product-block"><b>Ёмкость: </b><span class="product-item__body-item_Size"></span></div>
+                            <div class="product-block"><b>Интерфейс SATA: </b><span class=" product-item__body-item_Sata"></span></div>
+                            <div class="product-block"><b>Интерфейс USB: </b><span class=" product-item__body-item_Usb"></span></div>
+                        </div>
+                        <div class="product-block__container">
+                            <div class="product-block"><b>Автомносность: </b><span class=" product-item__body-item_Autonomous"></span></div>
+                            <div class="product-block"><b>Время автономной работы: </b><span class=" product-item__body-item_AutonomousTime"></span></div>
+                            <div class="product-block"><b>Объём буфера: </b><span class=" product-item__body-item_bufferSize"></span></div>
+                            <div class="product-block"><b>Объём флэш-памяти: </b><span class=" product-item__body-item_FlashSize"></span></div>
+                        </div>
+                        <div class="product-block__container">
+                            <div class="product-block"><b>Среднее время доступа: </b><span class=" product-item__body-item_AccessTime"></span></div>
+                            <div class="product-block"><b>Скорость чтения: </b><span class=" product-item__body-item_ReadSpeed"></span></div>
+                            <div class="product-block"><b>Скорость записи: </b><span class=" product-item__body-item_WriteSpeed"></span></div>
+                            <div class="product-block"><b>Скорость вращения: </b><span class=" product-item__body-item_RotationSpeed"></span></div>
+                        </div>
+                        <div class="product-block__container">
+                            <div class="product-block"><b>Форм-фактор: </b><span class=" product-item__body-item_FormFactor"></span></div>
+                            <div class="product-block"><b>Наличие SCSI: </b><span class=" product-item__body-item_HasSCSI"></span></div>
+                            <div class="product-block"><b>Тип M2: </b><span class=" product-item__body-item_IsM2"></span></div>
+                            <div class="product-block"><b>Назначение: </b><span class=" product-item__body-item_Purpose"></span></div>
+                            <div class="product-block">@*<b>Время наработки на отказ : </b><span class=" product-item__body-item_WorkTime"></span>*@</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -59,8 +81,6 @@
                             <div class="form-control disabled" name="Manufacturer"></div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-body">
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label class="col-form-label" name="Cost">Цена</label>
@@ -69,8 +89,6 @@
                             <div class="form-control disabled" name="Cost"></div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-body">
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label class="col-form-label" name="AccessTime">Среднее время доступа</label>
@@ -79,8 +97,6 @@
                             <div class="form-control disabled" name="AccessTime"></div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-body">
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label class="col-form-label" name="Autonomous">Автономность</label>
@@ -89,8 +105,6 @@
                             <div class="form-control disabled" name="Autonomous"></div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-body">
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label class="col-form-label" name="AutonomousTime">Время работы в автономном режиме</label>
@@ -99,8 +113,6 @@
                             <div class="form-control disabled" name="AutonomousTime"></div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-body">
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label class="col-form-label" name="BufferSize">Объём буфера</label>
@@ -109,8 +121,6 @@
                             <div class="form-control disabled" name="BufferSize"></div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-body">
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label class="col-form-label" name="FlashSize">Объём флэн-памяти</label>
@@ -119,8 +129,6 @@
                             <div class="form-control disabled" name="FlashSize"></div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-body">
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label class="col-form-label" name="FormFactor">Форм-фактор</label>
@@ -129,8 +137,6 @@
                             <div class="form-control disabled" name="FormFactor"></div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-body">
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label class="col-form-label" name="HasSCSI">Интерфейс SCSI</label>
@@ -139,8 +145,6 @@
                             <div class="form-control disabled" name="HasSCSI"></div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-body">
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label class="col-form-label" name="IsM2">Интерфейс M2</label>
@@ -149,8 +153,6 @@
                             <div class="form-control disabled" name="IsM2"></div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-body">
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label class="col-form-label" name="Purpose">Назначение</label>
@@ -159,8 +161,6 @@
                             <div class="form-control disabled" name="Purpose"></div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-body">
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label class="col-form-label" name="ReadSpeed">Скорость чтения</label>
@@ -169,8 +169,6 @@
                             <div class="form-control disabled" name="ReadSpeed"></div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-body">
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label class="col-form-label" name="RotationSpeed">Скорость вращения</label>
@@ -179,8 +177,6 @@
                             <div class="form-control disabled" name="RotationSpeed"></div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-body">
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label class="col-form-label" name="Sata">Интерфейс SATA</label>
@@ -189,8 +185,6 @@
                             <div class="form-control disabled" name="Sata"></div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-body">
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label class="col-form-label" name="Size">Ёмкость</label>
@@ -199,8 +193,6 @@
                             <div class="form-control disabled" name="Size"></div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-body">
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label class="col-form-label" name="Type">Тип</label>
@@ -209,8 +201,6 @@
                             <div class="form-control disabled" name="Type"></div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-body">
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label class="col-form-label" name="Usb">Интерфейс USB</label>
@@ -219,8 +209,6 @@
                             <div class="form-control disabled" name="Usb"></div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-body">
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label class="col-form-label" name="WorkTime">Время наработки на отказ</label>
@@ -229,8 +217,6 @@
                             <div class="form-control disabled" name="WorkTime"></div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-body">
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label class="col-form-label" name="WriteSpeed">Скорость записи</label>
@@ -258,10 +244,13 @@
             $p.find('.product-item__image').css('background-image', 'url(' + root + "images/" + item.Image + ".png");
             $p.find('.product-item__header-name').text(item.Name);
             $p.find('.product-item__header-cost').text(item.Cost + " Руб");
-            $p.find('.product-item__body-item_manufacturer').text(item.Manufacturer);
-            $p.find('.product-item__body-item_type').text(item.Type);
-            $p.find('.product-item__body-item_size').text(item.Size + " Гб");
-            $p.find('.product-item__body-item_sata').text(item.Sata);
+            //$p.find('.product-item__body-item_manufacturer').text(item.Manufacturer);
+            //$p.find('.product-item__body-item_type').text(item.Type);
+            //$p.find('.product-item__body-item_size').text(item.Size + " Гб");
+            //$p.find('.product-item__body-item_sata').text(item.Sata);
+            for (var name in item) {
+                $('.product-item__body-item_' + name).text(item[name]);
+            }
             $('.product-item__container').append($p);
 
             $p.click(function () {
